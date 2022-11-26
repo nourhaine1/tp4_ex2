@@ -1,0 +1,24 @@
+<style>
+
+   *{
+      display: inline;
+   }
+</style>
+ 
+  <div  *ngFor="let p of tabPersonnages; index as indexes;">
+    <img [src]="p.Image" height="30" class="rounded-circle">
+   
+    <p>{{ p.nom }}</p>
+    
+    <input type="checkbox" [checked]="p.majeur" (click)="majeurOuNon(indexes)">majeur,
+   
+    Nombre d'abonées:
+    <p>{{ p.nb }}</p>
+    <button (click)="addOne(indexes)">s'abonner</button>
+    <br>
+  </div>
+<br>
+<br>
+<div>
+   <p> Le nombre de personnes majeur dans la liste est : {{majeurSum()}}</p>
+</div>
